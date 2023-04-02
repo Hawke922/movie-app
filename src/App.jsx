@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/favourites' element={<div>Favourites</div>} />
-          <Route path='/:idMovie' element={<div>Movie Detail</div>} />
+          <Route path='/detail/:idMovie' element={<div>Movie Detail</div>} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
