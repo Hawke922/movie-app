@@ -2,6 +2,8 @@ import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { useParams } from 'react-router-dom'
 
+import { ReactComponent as StarIcon } from '/src/assets/star.svg'
+
 import Loader from '/src/sharedComponents/Loader'
 
 import classes from './MovieDetail.module.scss'
@@ -39,6 +41,7 @@ const MovieDetail = () => {
       <img className={classes.poster} src={data.Poster} alt={data.Title} />
       <div>
         <h2 className={classes.title}>{data.Title}</h2>
+        <StarIcon className={classes['star-icon']} />
         <div>
           <span className={classes.bold}>{data.Released}</span>
           &nbsp;&bull;&nbsp;

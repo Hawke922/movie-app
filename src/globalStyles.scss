@@ -1,3 +1,5 @@
+@import '/src/variables';
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,8 +7,8 @@
   font-size: 16px;
 
   color-scheme: light dark;
-  color: #ffffffc7;
-  background-color: #1c1f22;
+  color: $white;
+  background-color: $grey;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

@@ -1,3 +1,5 @@
+@import '/src/variables';
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -11,16 +13,16 @@
   box-sizing: border-box;
   font-size: 1rem;
   padding: 12px 16px;
-  background: #e53232;
+  background: $red;
   border-radius: 4px;
   border: none;
   margin: 50px 0 20px 0;
 }
 
 .input:focus {
-  outline: 1px solid #ffffff6c;
+  outline: 1px solid $white-placeholder;
 }
 
 .input::placeholder {
-  color: #ffffff83;
+  color: $white-placeholder;
 }

@@ -1,3 +1,5 @@
+@import '/src/variables';
+
 .wrapper {
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -8,18 +10,30 @@
 }
 
 .error {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .poster {
   border-radius: 8px;
+  box-shadow: 0px 2px 4px #00000083;
 }
 
 .title {
   margin-bottom: 10px;
+  display: inline-block;
+}
+
+.star-icon {
+  max-height: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.star-icon path {
+  fill: $white-placeholder;
 }
 
 .plot {

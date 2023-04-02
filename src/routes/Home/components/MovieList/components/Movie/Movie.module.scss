@@ -1,9 +1,11 @@
+@import '/src/variables';
+
 .wrapper {
   padding: 8px;
-  border-bottom: 1px solid #ffffff17;
+  border-bottom: 1px solid $white-dim;
   cursor: pointer;
 
   &:hover {
-    color: #ffffff;
+    color: $white-highlight;
   }
 }
