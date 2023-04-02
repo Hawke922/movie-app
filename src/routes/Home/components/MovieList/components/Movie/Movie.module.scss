@@ -4,8 +4,14 @@
   padding: 8px;
   border-bottom: 1px solid $white-dim;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
 
   &:hover {
     color: $white-highlight;
   }
+}
+
+.highlight {
+  color: $red;
 }

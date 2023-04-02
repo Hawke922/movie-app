@@ -2,7 +2,7 @@ import React, { useCallback, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { useInfiniteQuery } from '@tanstack/react-query'
 
-import Loader from '/src/sharedComponents/Loader'
+import Loader from '/src/components/Loader'
 
 import Movie from './components/Movie'
 
@@ -75,7 +75,6 @@ const MovieList = ({ searchValue }) => {
     return <span>{error}</span>
   }
 
-  // TODO: constants for response types
   if (data.pages[0].Response === 'False') {
     return <div>No movies found</div>
   }

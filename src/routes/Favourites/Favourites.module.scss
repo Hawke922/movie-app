@@ -1,0 +1,58 @@
+@import '/src/variables';
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: $default-gap;
+  max-width: $app-width;
+  margin: 0 auto;
+
+  &--empty {
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+
+  &__poster {
+    border-radius: 8px;
+    box-shadow: $shadow;
+    height: 300px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__subheadline {
+    display: flex;
+    justify-content: space-between;
+    color: $white-placeholder;
+  }
+
+  &__year {
+    font-weight: 200;
+  }
+
+  &__remove-button {
+    color: inherit;
+    margin-left: auto;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}

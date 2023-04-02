@@ -1,18 +1,42 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import { useDebounce } from '/src/helpers/hooks.js'
+
+import { SearchContext } from '/src/context/SearchContext'
 
 import MovieList from './components/MovieList'
 
 import classes from './Home.module.scss'
 
 const Home = () => {
-  const [searchValue, setSearchValue] = useState('')
+  const { searchData, setSearchData } = useContext(SearchContext)
 
-  const debouncedSearchValue = useDebounce(searchValue, 500)
+  const debouncedSearchValue = useDebounce(searchData.searchValue, 500)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setSearchData((previousSearchData) => ({
+        ...previousSearchData,
+        scrollPosition: window.scrollY,
+      }))
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  useEffect(() => {
+    window.scrollTo(0, searchData.scrollPosition)
+  }, [])
 
   const handleChange = (event) => {
-    setSearchValue(event.target.value)
+    setSearchData((previousSearchData) => ({
+      ...previousSearchData,
+      searchValue: event.target.value,
+    }))
   }
 
   return (
@@ -21,7 +45,7 @@ const Home = () => {
         className={classes.input}
         type='text'
         placeholder='Search for a movie'
-        value={searchValue}
+        value={searchData.searchValue}
         onChange={handleChange}
       />
       <MovieList searchValue={debouncedSearchValue} />

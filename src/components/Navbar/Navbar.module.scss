@@ -1,0 +1,42 @@
+@import '/src/variables';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: $default-gap;
+  background-color: $grey-darker;
+  box-shadow: $shadow;
+}
+
+.inner-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: $app-width;
+}
+
+.highlighted-font {
+  color: $red;
+  font-weight: 200;
+}
+
+.link {
+  color: $white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 200;
+
+  &:hover {
+    color: $white-highlight;
+  }
+
+  &--active {
+    color: $red;
+
+    &:hover {
+      cursor: default;
+      color: $red;
+    }
+  }
+}
