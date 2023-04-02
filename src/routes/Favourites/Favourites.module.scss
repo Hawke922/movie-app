@@ -64,3 +64,29 @@
     margin-bottom: $default-gap;
   }
 }
+
+@media (max-width: $mobile-breakpoint) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .movie {
+    padding: 40px;
+    border-bottom: 1px solid $white-dim;
+
+    &__poster {
+      height: unset;
+    }
+  }
+
+  .movie:first-of-type {
+    padding-top: 0;
+  }
+
+  .movie:last-of-type {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}

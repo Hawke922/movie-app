@@ -12,6 +12,10 @@
   }
 }
 
+.wrapper:last-of-type {
+  border-bottom: none;
+}
+
 .title {
   overflow: hidden;
   text-overflow: ellipsis;
