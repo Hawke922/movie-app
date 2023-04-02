@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { useParams } from 'react-router-dom'
 import classnames from 'classnames'
 
-import { FavouritesContext } from '/src/context/FavouritesContext'
+import { getFavourites, saveFavourites } from '/src/helpers/localStorage'
 
 import { ReactComponent as StarIcon } from '/src/assets/star.svg'
 
@@ -12,8 +12,8 @@ import Loader from '/src/components/Loader'
 import classes from './MovieDetail.module.scss'
 
 const MovieDetail = () => {
+  const [storageUpdated, setStorageUpdated] = useState(false)
   const { idMovie } = useParams()
-  const { favourites, setFavourites } = useContext(FavouritesContext)
 
   const apiKey = import.meta.env.VITE_OMDB_API_KEY
 
@@ -40,16 +40,20 @@ const MovieDetail = () => {
     return <div className={classes.error}>{data.Error}</div>
   }
 
+  const favourites = getFavourites()
+
   const isFavourite = favourites.some((movie) => movie.id === data.imdbID)
 
   const handleFavourite = () => {
-    if (isFavourite) {
-      setFavourites(favourites.filter((movie) => movie.id !== data.imdbID))
+    setStorageUpdated((prevState) => !prevState)
+    window.dispatchEvent(new Event('storage'))
 
+    if (isFavourite) {
+      saveFavourites(favourites.filter((movie) => movie.id !== data.imdbID))
       return
     }
 
-    setFavourites([
+    saveFavourites([
       ...favourites,
       {
         id: data.imdbID,
@@ -60,13 +64,9 @@ const MovieDetail = () => {
     ])
   }
 
-  console.log(data)
-
-  const hasPoster = data.Poster !== 'N/A'
-
   return (
     <div className={classes.wrapper}>
-      {hasPoster && (
+      {data.Poster !== 'N/A' && (
         <img className={classes.poster} src={data.Poster} alt={data.Title} />
       )}
       <div>

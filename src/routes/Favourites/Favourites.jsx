@@ -1,14 +1,18 @@
-// create favourites component
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
 import classnames from 'classnames'
 import { useNavigate } from 'react-router-dom'
-import { FavouritesContext } from '/src/context/FavouritesContext'
+
+import { getFavourites, saveFavourites } from '/src/helpers/localStorage'
 
 import classes from './Favourites.module.scss'
 
 const Favourites = () => {
-  const { favourites, setFavourites } = useContext(FavouritesContext)
   const navigate = useNavigate()
+
+  // this is a hacky approach, but since we wanted to persist favourites in local storage, sacrifaces needed to be made :D 
+  const [storageUpdated, setStorageUpdated] = useState(false)
+
+  const favourites = getFavourites()
 
   if (favourites.length === 0) {
     return (
@@ -16,6 +20,14 @@ const Favourites = () => {
         Search for movies and mark them as favourite to add to the library.
       </div>
     )
+  }
+
+  const handleRemove = (idToRemove) => {
+    setStorageUpdated((prevState) => !prevState)
+    // seems like dispatch event wont be fired automatically in the same document
+    window.dispatchEvent(new Event('storage'))
+
+    saveFavourites(favourites.filter((movie) => movie.id !== idToRemove))
   }
 
   return (
@@ -35,11 +47,7 @@ const Favourites = () => {
             <span className={classes['movie__year']}>{movie.year}</span>
             <button
               className={classes['movie__remove-button']}
-              onClick={() => {
-                setFavourites((prevFavourites) =>
-                  prevFavourites.filter((movieToFilter) => movieToFilter.id !== movie.id)
-                )
-              }}
+              onClick={() => handleRemove(movie.id)}
             >
               REMOVE
             </button>

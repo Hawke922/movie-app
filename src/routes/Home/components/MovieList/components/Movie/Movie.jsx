@@ -1,14 +1,14 @@
-import React, { forwardRef, useContext } from 'react'
+import React, { forwardRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-import { FavouritesContext } from '/src/context/FavouritesContext'
+import { getFavourites } from '/src/helpers/localStorage'
 
 import classes from './Movie.module.scss'
 
 const Movie = forwardRef(({ title, id }, ref) => {
   const navigate = useNavigate()
-  const { favourites } = useContext(FavouritesContext)
+  const favourites = getFavourites()
 
   const isFavourite = favourites.some((movie) => movie.id === id)
 
