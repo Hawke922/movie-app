@@ -1,0 +1,36 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.poster {
+  border-radius: 8px;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.plot {
+  margin: 40px 0;
+}
+
+.info-table {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+}
+
+.bold {
+  font-weight: 500;
+}
