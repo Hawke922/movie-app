@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
   gap: $default-gap;
+  padding: 0 $app-padding;
   max-width: $app-width;
   margin: 0 auto;
 
@@ -54,5 +55,12 @@
     &:hover {
       color: $red;
     }
+  }
+}
+
+@media (max-width: $app-width) {
+  .wrapper {
+    justify-content: center;
+    margin-bottom: $default-gap;
   }
 }

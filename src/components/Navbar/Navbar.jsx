@@ -18,7 +18,7 @@ const Navbar = () => {
         <NavLink to='/' className={getClassName}>
           Search
         </NavLink>
-        <h1>
+        <h1 className={classes.logo}>
           <span className={classes['highlighted-font']}>MOVIE</span>APP
         </h1>
         <NavLink to='/favourites' className={getClassName}>

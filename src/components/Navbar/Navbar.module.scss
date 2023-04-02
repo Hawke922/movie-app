@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: space-between;
   width: $app-width;
+  padding: 0 $app-padding;
 }
 
 .highlighted-font {
@@ -38,5 +39,11 @@
       cursor: default;
       color: $red;
     }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .logo {
+    font-size: 2rem;
   }
 }

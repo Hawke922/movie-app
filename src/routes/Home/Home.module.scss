@@ -27,3 +27,9 @@
 .input::placeholder {
   color: $white-placeholder;
 }
+
+@media (max-width: $mobile-breakpoint) {
+  .wrapper {
+    padding: 0 $app-padding;
+  }
+}

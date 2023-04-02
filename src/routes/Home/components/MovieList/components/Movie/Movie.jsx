@@ -18,7 +18,7 @@ const Movie = forwardRef(({ title, id }, ref) => {
       ref={ref}
       onClick={() => navigate(`/detail/${id}`)}
     >
-      <span>{title}</span>
+      <span className={classes.title}>{title}</span>
       {isFavourite && <span className={classes.highlight}>Favourite</span>}
     </div>
   )
