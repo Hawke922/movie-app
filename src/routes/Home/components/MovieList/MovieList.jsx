@@ -16,7 +16,7 @@ const MovieList = ({ searchValue }) => {
       queryKey: ['movies', searchValue],
       queryFn: async ({ pageParam }) => {
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${apiKey}&s=${searchValue}&type=movie&page=${pageParam}`
+          `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchValue}&type=movie&page=${pageParam}`
         )
 
         return await res.json()

@@ -21,7 +21,7 @@ const MovieDetail = () => {
     queryKey: ['movie', idMovie],
     queryFn: async () => {
       const res = await fetch(
-        `http://www.omdbapi.com/?apikey=${apiKey}&i=${idMovie}&plot=full`
+        `https://www.omdbapi.com/?apikey=${apiKey}&i=${idMovie}&plot=full`
       )
 
       return await res.json()
