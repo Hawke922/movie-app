@@ -25,7 +25,7 @@ VITE_OMDB_API_KEY=[YOUR_API_KEY]
 ## Scripts
 `npm run dev` : Starts a development server  
 `npm run build` : Generates a set of static files for deployment  
-`npm run preview` : Compiles and serves source code and assets, and provides a live preview of the application  
+`npm run preview` : Compiles and serves source code and assets from `dist` folder, and provides a live preview of the application  
 
 ## Code Splitting
 The application has been split into 3 standalone chunks (Home, MovieDetail, Favourites) with react lazy and suspense.
