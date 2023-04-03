@@ -14,18 +14,18 @@ Node.js, npm
 An OMDB API key. You can get one for free by registering at [omdbapi.com](https://www.omdbapi.com/apikey.aspx).
 
 ## Installation
-Clone this repository  
-Run `npm install` to install the required packages  
-Create a `.env` file at the root of the project and add the following line, replacing `[YOUR_API_KEY]` with your OMDB API key:
+1. Clone this repository  
+2. Run `npm install` to install the required packages  
+3. Create a `.env` file at the root of the project and add the following line, replacing `[YOUR_API_KEY]` with your own OMDB API key:
 ```
 VITE_OMDB_API_KEY=[YOUR_API_KEY]
 ```
-Run `npm run dev` to start the development server and view the application in your browser at [localhost:5173](http://localhost:5173/).
+4. Run `npm run dev` to start the development server and view the application in your browser at [localhost:5173](http://localhost:5173/).
 
 ## Scripts
-`npm run dev`: Starts a development server  
-`npm run build`: Generates a set of static files for deployment  
-`npm run preview`: Compiles and serves source code and assets, and provides a live preview of the application  
+`npm run dev` : Starts a development server  
+`npm run build` : Generates a set of static files for deployment  
+`npm run preview` : Compiles and serves source code and assets, and provides a live preview of the application  
 
 ## Code Splitting
 The application has been split into 3 standalone chunks (Home, MovieDetail, Favourites) with react lazy and suspense.
