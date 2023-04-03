@@ -24,6 +24,7 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/favourites' element={<Favourites />} />
                 <Route path='/detail/:idMovie' element={<MovieDetail />} />
+                <Route path='*' element={<h3 className='not-found-error'>404 Page Not Found</h3>} />
               </Routes>
             </Suspense>
           </BrowserRouter>

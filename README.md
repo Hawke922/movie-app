@@ -1,5 +1,5 @@
 # Movie App
-This is a simple React application that allows you to search for movies using the OMDB API, view their search results and details, and add or remove them from your favourites.
+This is a simple React application that allows you to search for movies using the OMDB API, view their search results and details, and add or remove them from your favourites. Hosted live on [Netflify](https://magnificent-muffin-9a364c.netlify.app/).
 
 ## Features
 - Search for movies using the OMDB API and display the search results with "infinite scrolling"

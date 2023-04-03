@@ -29,6 +29,39 @@
   color: $white-placeholder;
 }
 
+.scroll-button {
+  display: hidden;
+  opacity: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 10%;
+  background-color: $red;
+  color: $white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  box-shadow: $shadow-lighter;
+  transition: opacity 0.1s ease-out;
+
+  &--visible {
+    display: visible;
+    opacity: 0.9;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+      color: $white-highlight;
+      box-shadow: $shadow;
+    }
+  }
+}
+
+@media (max-width: $app-width) {
+  .scroll-button {
+    right: 20px;
+  }
+}
+
 @media (max-width: $mobile-breakpoint) {
   .wrapper {
     padding: 0 $app-padding;
