@@ -41,6 +41,3 @@ The application uses local storage to save the user's favourite movies so they p
 
 ## Deployment
 The application can be deployed to a static hosting service such as Netlify or GitHub Pages. To deploy, run `npm run build` to create the production build, then upload the contents of the dist folder to your hosting service.
-
-## Conclusion
-This is a simple but functional React application that demonstrates the use of several key features and libraries of the React ecosystem, including React Context, React Hooks, HOC and React Router. Local storage functionality was implemented just for demonstration purposes.
