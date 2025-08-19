@@ -39,5 +39,5 @@ The application uses local states and react context for state management.
 ## Persistence
 The application uses local storage to save the user's favourite movies so they persist between sessions. Implementation of this client-side persistence is far from ideal, since it resulted in some "hacky" solutions like forcing re-renders and manualy dispatching storage events.
 
-## Deployment
+## Deployment, Contributing
 The application can be deployed to a static hosting service such as Netlify or GitHub Pages. To deploy, run `npm run build` to create the production build, then upload the contents of the dist folder to your hosting service.
