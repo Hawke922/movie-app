@@ -27,17 +27,5 @@ VITE_OMDB_API_KEY=[YOUR_API_KEY]
 `npm run build` : Generates a set of static files for deployment  
 `npm run preview` : Compiles and serves source code and assets from `dist` folder, and provides a live preview of the application  
 
-## Code Splitting
-The application has been split into 3 standalone chunks (Home, MovieDetail, Favourites) with react lazy and suspense.
-
-## Styling
-The application uses BEM methodology and Sass as CSS pre-processor.
-
-## State Management
-The application uses local states and react context for state management.
-
-## Persistence
-The application uses local storage to save the user's favourite movies so they persist between sessions. Implementation of this client-side persistence is far from ideal, since it resulted in some "hacky" solutions like forcing re-renders and manualy dispatching storage events.
-
-## Deployment, Contributing
+## Deployment
 The application can be deployed to a static hosting service such as Netlify or GitHub Pages. To deploy, run `npm run build` to create the production build, then upload the contents of the dist folder to your hosting service.
